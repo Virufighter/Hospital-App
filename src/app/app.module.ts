@@ -6,6 +6,22 @@ import { AppComponent } from './app.component';
 import { PatiententryComponent } from './patiententry/patiententry.component';
 import { PatientsearchComponent } from './patientsearch/patientsearch.component';
 import { PatientDeletehComponent } from './patient-deleteh/patient-deleteh.component';
+import { RouterModule, Routes } from '@angular/router';
+const myrout:Routes=[
+  {
+    path:"",
+    component:PatiententryComponent
+  },
+  {
+    path:"search",
+    component:PatientsearchComponent
+  },
+  {
+    path:"delete",
+    component:PatientDeletehComponent
+
+  }
+]
 
 @NgModule({
   declarations: [
@@ -16,7 +32,8 @@ import { PatientDeletehComponent } from './patient-deleteh/patient-deleteh.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(myrout)
   ],
   providers: [],
   bootstrap: [AppComponent]
